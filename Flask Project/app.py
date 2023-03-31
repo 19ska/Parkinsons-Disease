@@ -5,6 +5,8 @@ import pickle
 import numpy as np
 load_model_DT=pickle.load(open('static/Sav_Models/DT_model.sav','rb'))
 load_model_KNN=pickle.load(open('static/Sav_Models/KNN_model.sav','rb'))
+load_model_RF=pickle.load(open('static/Sav_Models/fr_model.sav','rb'))
+load_model_GB=pickle.load(open('static/Sav_Models/gb_model2.sav','rb'))
 
 app= Flask(__name__)
 
@@ -56,6 +58,10 @@ def predict():
         print(prediction_DT)
         prediction_KNN = load_model_KNN.predict(input_data_reshaped)
         print(prediction_KNN)
+        prediction_RF = load_model_RF.predict(input_data_reshaped)
+        print(prediction_RF)
+        prediction_GB = load_model_GB.predict(input_data_reshaped)
+        print(prediction_GB)
         if prediction_DT[0] == 0 and prediction_KNN[0]==0:
             return'KNN: This person does not have parkinson disease \n DT: This person does not have parkinson disease'
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1:

@@ -35,5 +35,5 @@ features_dict = {'MDVP:Fo(Hz)': F[0], 'MDVP:Fhi(Hz)': max(F[1]), 'MDVP:Flo(Hz)':
                 'Shimmer:APQ5': F[16], 'MDVP:APQ': F[17], 'Shimmer:DDA': F[18], 'NHR': F[19], 'HNR': F[20], 
                 'RPDE': F[21], 'D2': F[22], 'DFA': F[23], 'spread1': F[24], 'spread2': F[25], 'PPE': F[26]}
 new = pd.DataFrame.from_dict(features_dict)
-print(new.head())
+print(new.head(1))
 
