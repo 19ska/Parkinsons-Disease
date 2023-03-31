@@ -5,8 +5,8 @@ import pickle
 import numpy as np
 load_model_DT=pickle.load(open('static/Sav_Models/DT_model.sav','rb'))
 load_model_KNN=pickle.load(open('static/Sav_Models/KNN_model.sav','rb'))
-load_model_RF=pickle.load(open('static/Sav_Models/fr_model.sav','rb'))
-load_model_GB=pickle.load(open('static/Sav_Models/gb_model2.sav','rb'))
+load_model_RF=pickle.load(open('static/Sav_Models/RF_model.sav','rb'))
+load_model_XG=pickle.load(open('static/Sav_Models/GB_model.sav','rb'))
 
 app= Flask(__name__)
 
@@ -60,18 +60,40 @@ def predict():
         print(prediction_KNN)
         prediction_RF = load_model_RF.predict(input_data_reshaped)
         print(prediction_RF)
-        prediction_GB = load_model_GB.predict(input_data_reshaped)
-        print(prediction_GB)
-        if prediction_DT[0] == 0 and prediction_KNN[0]==0:
-            return'KNN: This person does not have parkinson disease \n DT: This person does not have parkinson disease'
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==1:
-            return'KNN: This person does not have parkinson disease \n DT: This person has parkinson disease'
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==0:
-            return'KNN: This person has parkinson disease \n DT: This person does not have parkinson disease'
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==1:
-             return'KNN: This person has parkinson disease \n DT: This person has parkinson disease'
-             
-
+        prediction_XG = load_model_XG.predict(input_data_reshaped)
+        print(prediction_XG)
+        if prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
+            return'KNN: no DT: no RF:no XG: no'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
+             return'KNN: no DT: no RF:yes XG: yes'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
+             return'KNN: no DT: no RF:yes XG: no'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
+             return'KNN: no DT: no RF:yes XG: yes'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
+             return'KNN: no DT: yes RF:no XG: no'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
+             return'KNN: no DT: yes RF:no XG: yes'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
+             return'KNN: no DT: yes RF:yes XG: no'
+        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
+             return'KNN: no DT: yes RF:yes XG: yes'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
+             return'KNN: yes DT: no RF:no XG: no'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
+             return'KNN: yes DT: no RF:no XG: yes'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
+             return'KNN: yes DT: no RF:yes XG: no'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
+             return'KNN: yes DT: no RF:yes XG: yes'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
+             return'KNN: yes DT: yes RF:no XG: no'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
+             return'KNN: yes DT: yes RF:no XG: yes'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
+             return'KNN: yes DT: yes RF:yes XG: no'
+        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
+             return'KNN: yes DT: yes RF:yes XG: yes'
 
 
 if __name__ =='__main__':
