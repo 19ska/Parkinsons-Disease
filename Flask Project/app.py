@@ -96,17 +96,17 @@ def predict():
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
              return'KNN: yes DT: yes RF:yes XG: no'
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             result_dt="YES"
-             result_knn="YES"
-             result_rf="YES"
-             result_xg="YES"
+             result_dt="+"
+             result_knn="+"
+             result_rf="+"
+             result_xg="+"
              #return'KNN: yes DT: yes RF:yes XG: yes'
           
         total = ((prediction_DT+prediction_KNN+prediction_RF+prediction_XG)/4)*100
         if total >50 :
-             psss="Have"
+             psss="Positive"
         elif total<50 :
-             psss="Doesn't Have"
+             psss="Negative"
         return render_template('results.html',knn=result_knn,dt=result_dt,rf=result_rf,xg=result_xg,psss=psss)
 if __name__ =='__main__':
     app.run(host='0.0.0.0', port=5000)

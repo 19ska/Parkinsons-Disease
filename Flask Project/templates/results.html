@@ -4,24 +4,100 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Result</title>
+    <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
     <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css?h=a884aa3b60a93ebd290b9fa341049391">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="static/assets/css/Banner-Heading-Image-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
+
 </head>
 
 <body>
+    <style>
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+    }
+
+    .donut-chart-1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 100%
+    }
+    p.center {
+    background: #11A8AB;
+    position: absolute;
+    text-align: center;
+    font-size: 15px;
+    top:0;left:0;bottom:0;right:0;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    border-radius: 50%;
+    line-height: 35px;
+    padding: 15% 0 0;
+    }
+        
+        
+    .portion-block-1 {
+        border-radius: 50%;
+        clip: rect(0px, 200px, 200px, 100px);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .circle-1 {
+        border-radius: 50%;
+        clip: rect(0px, 100px, 200px, 0px);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        font-family: monospace;
+        font-size: 1.5rem;
+    }
+        
+        
+    #part1 {
+        transform: rotate(0deg);
+    }
+
+        #part1 .circle-1 {
+            background-color: #E64C65;
+            /*transform: rotate(76deg);*/
+            animation: first 1s 1 forwards;
+        }
+        
+        
+    #part2 {
+        transform: rotate(180deg);
+    }
+    #part2 .circle-1 {
+        background-color: #E64C65;
+        animation: second 1s 1 forwards 1s;
+    }	
+        
+    /* Animation */
+    @keyframes first {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(180deg);}
+    }
+        
+    @keyframes second {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(170deg);}
+    }
+
+    </style>
     <!-- Start: Navbar Centered Links -->
     <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" data-bss-hover-animate="pulse" href="/">
-          <span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center mr-2 bs-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-braces-asterisk" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6ZM14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6ZM7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5h-1Z"/>
-            </svg>
-          </span>
+          <img src="static/images/logo.ico" alt="" srcset="" width="25px" height="25px"> &nbsp;
           <span><strong>PDML</strong>
             </span>
           </a>
@@ -35,6 +111,7 @@
           </div>
       </div>
     </nav>
+    <div id="report" style="display: block;">
     <!-- End: Navbar Centered Links -->
     <header class="bg-primary-gradient">
         <!-- Start: Hero Clean Reverse -->
@@ -46,56 +123,96 @@
                     </div>
                     <div style="max-width: 450px;"></div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1700">
                     <h2 class="font-weight-bold" data-bss-hover-animate="pulse"><br>You report is ready !<br><br></h2>
-                    <p data-bss-hover-animate="pulse" class="my-3">add some text</p>
-                    <form class="d-flex justify-content-center flex-wrap justify-content-md-start flex-lg-nowrap" method="post">
+                    <p data-bss-hover-animate="pulse" class="my-3">Download your report by clicking the below button for a brief overview of the diagnosis</p>
                         <div class="my-2 mr-2"></div>
-                        <div data-aos="fade-up" data-aos-delay="1700" class="my-2"><button class="btn btn-outline-info shadow" data-bss-hover-animate="pulse" type="submit">View Report</button></div>
-                    </form>
+                        <div data-aos="fade-up" data-aos-delay="1700" class="my-2"><button class="btn btn-outline-info shadow" data-bss-hover-animate="pulse" onclick="viewreport();">View Report</button></div>
                 </div>
             </div>
         </div><!-- End: Hero Clean Reverse -->
     </header>
+    </div>
+    <div id="reports" style="display: none;">
     <section class="py-4 py-xl-5">
         <!-- Start: 1 Row 4 Columns -->
         <div class="container font-weight-bold text-light">
             <div class="row text-center">
                 <div class="col-md-3">
-                    <div class="card border rounded-circle">
-                        <div class="card-body bg-success border rounded-circle" data-bss-hover-animate="pulse">
-                            <h4 class="font-weight-bold text-light card-title">KNN</h4>
-                            <h6 class="text-light card-subtitle mb-2">94.87%</h6>
-                            <p class="font-weight-bold text-light mb-2">{{knn}}</p>
+                        
+                        <div class="container" data-bss-hover-animate="pulse">
+                            <div class="donut-chart-block block">
+                              <div class="donut-chart-1">
+                                <div id="part1" class="portion-block-1">
+                                  <div class="circle-1"></div>
+                                </div>
+                                <div id="part2" class="portion-block-1">
+                                  <div class="circle-1"></div>
+                                </div>                          
+                                <p class="center">
+                                    <span style="color:white;">KNN <br>94.87% <br>{{knn}} ve
+                                    </span></p>
+                              </div>
+                            </div>
                         </div>
-                    </div>
+                        
                 </div>
                 <div class="col-md-3">
-                    <div class="card border rounded-circle">
-                        <div class="card-body bg-success border rounded-circle" data-bss-hover-animate="pulse">
-                            <h4 class="font-weight-bold text-light card-title">DT</h4>
-                            <h6 class="text-light card-subtitle mb-2">92.3%</h6>
-                            <p class="font-weight-bold text-light mb-2">{{dt}}</p>
+                    
+                    <div class="container" data-bss-hover-animate="pulse">
+                        <div class="donut-chart-block block">
+                          <div class="donut-chart-1">
+                            <div id="part1" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>
+                            <div id="part2" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>                          
+                            <p class="center">
+                                <span style="color:white;">DT <br>92.3% <br>{{dt}} ve
+                                </span></p>
+                          </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col" data-bss-hover-animate="pulse">
-                    <div class="card border rounded-circle">
-                        <div class="card-body bg-success border rounded-circle">
-                            <h4 class="font-weight-bold text-light card-title">RF</h4>
-                            <h6 class="text-light card-subtitle mb-2">94.87%</h6>
-                            <p class="font-weight-bold text-light mb-2">{{rf}}</p>
+                    
+                    <div class="container" data-bss-hover-animate="pulse">
+                        <div class="donut-chart-block block">
+                          <div class="donut-chart-1">
+                            <div id="part1" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>
+                            <div id="part2" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>                          
+                            <p class="center">
+                                <span style="color:white;">RF <br>94.87% <br>{{rf}} ve
+                                </span></p>
+                          </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-md-3">
-                    <div class="card border rounded-circle">
-                        <div class="card-body bg-success border rounded-circle" data-bss-hover-animate="pulse">
-                            <h4 class="font-weight-bold text-light card-title">XG</h4>
-                            <h6 class="text-light card-subtitle mb-2">94.87%</h6>
-                            <p class="font-weight-bold text-light mb-2">{{xg}}</p>
+                    
+                    <div class="container" data-bss-hover-animate="pulse">
+                        <div class="donut-chart-block block">
+                          <div class="donut-chart-1">
+                            <div id="part1" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>
+                            <div id="part2" class="portion-block-1">
+                              <div class="circle-1"></div>
+                            </div>                          
+                            <p class="center">
+                                <span style="color:white;">XG <br>94.87% <br>{{xg}} ve
+                                </span></p>
+                          </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div><!-- End: 1 Row 4 Columns -->
@@ -104,25 +221,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p class="mb-4" style="font-size: 1.6rem;"><br><br><br>You <span>{{psss}}</span> Parkiosn's Disease.</p>
-                        <p class="font-weight-bold text-success mb-2">Please contact your doctor immediately</p>
+                        <p class="mb-4" style="font-size: 1.6rem;"><br><br><br>Your Parkinson's Disease Detection Test has returned a {{psss}} result</p>
+                        <p class="font-weight-bold text-success mb-2">According to the analysis, you have been tested {{psss}} with Parkinson’s Disease.Please contact the doctor immediately to avoid any further complications in your health.</p>
+                        <div data-aos="fade-up" data-aos-delay="1700" class="my-2"><button class="btn btn-outline-info shadow" data-bss-hover-animate="pulse" onclick="">Send Report</button></div>
                     </div>
                     <div class="col-md-6">
-                        <lottie-player data-bss-hover-animate="pulse" src="https://assets8.lottiefiles.com/packages/lf20_ckcn4hvm.json" mode="normal" autoplay=""></lottie-player>
+                        <lottie-player data-bss-hover-animate="pulse" src="https://assets10.lottiefiles.com/packages/lf20_0ssane8p.json" mode="normal" autoplay="" style="width: 400px;height: 400px;"></lottie-player>
                     </div>
                 </div>
             </div><!-- End: 1 Row 2 Columns -->
         </div>
     </section>
-    <section>
+    <!-- <section> -->
         <!-- Start: Features Cards -->
-        <div class="container bg-primary-gradient py-4 py-xl-5">
+        <!-- <div class="container bg-primary-gradient py-4 py-xl-5">
             <p class="font-weight-bold text-center text-success mb-2">Confusion Matrix</p>
-            <div class="row">
-                <!-- <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h3 class="font-weight-bold">What we can do for you</h3>
-                </div> -->
-            </div>
+            
             <div class="py-5 p-lg-5">
                 <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
                     <div class="col mb-5">
@@ -155,8 +269,8 @@
                     </div>
                 </div>
             </div>
-        </div><!-- End: Features Cards -->
-    </section>
+        </div>End: Features Cards
+    </section> -->
     <section>
         <!-- Start: Features Cards -->
         <!-- <div class="container py-4 py-xl-5">
@@ -236,6 +350,7 @@
                 </div>
             </div> -->
         </div><!-- End: Testimonials -->
+    </div>
     </section><!-- Start: Footer Multi Column -->
     <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
@@ -245,6 +360,12 @@
             </div>
         </div>
     </footer><!-- End: Footer Multi Column -->
+    <script>
+        function viewreport(){
+            document.getElementById("report").style.display="none";
+            document.getElementById("reports").style.display="block";
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
