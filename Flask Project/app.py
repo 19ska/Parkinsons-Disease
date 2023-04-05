@@ -18,7 +18,7 @@ def home():
 def select():
     return render_template("service.html")
 @app.route('/data')
-def pd():
+def prediction_data():
     return render_template("prediction-data-entry.html")
 
 @app.route('/predict',methods=['POST'])
@@ -47,7 +47,7 @@ def predict():
         ppe=float(request.form['ppe'])
 
         input_data = (MDVP_Fo,MDVP_Fhi,MDVP_Flo,mdvp_jitter_percent,mdvp_jitter_abs,mdvp_rap,mdvp_ppq,jitter_ddp,jitter_ddp,mdvp_shimmer_db,shimmer_apq3,shimmer_apq5,mdvp_apq,shimmer_dda,nhr,hnr,rped,dfa,spread1,spread2,df,ppe)
-
+        print(input_data)
         # changing input data to a numpy array
         input_data_as_numpy_array = np.asarray(input_data)
 
@@ -108,5 +108,18 @@ def predict():
         elif total<50 :
              psss="Negative"
         return render_template('results.html',knn=result_knn,dt=result_dt,rf=result_rf,xg=result_xg,psss=psss)
+#File Upload Codes for Voice and Spiral datas
+@app.route('/voice-file-upload')
+def voice_data():
+    return render_template('voice-file-upload.html')
+
+@app.route('/upload',methods=['GET','POST'])
+def upload_file():
+     file = request.files['file']
+     filename = file.filename
+     file.save('static/images/voice-data/' + filename)
+     return 'File uploaded successfully!'
+
+
 if __name__ =='__main__':
     app.run(host='0.0.0.0', port=5000)
