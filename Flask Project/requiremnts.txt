@@ -9,3 +9,5 @@ pyTelegramBotAPI==4.10.0
 praat-parselmouth==0.4.3
 seaborn==0.12.2
 my-voice-analysis==0.7
+praat-textgrids==1.4.0
+Flask-Mail==0.9.1

@@ -8,8 +8,23 @@ load_model_DT=pickle.load(open('static/Sav_Models/DT_model.sav','rb'))
 load_model_KNN=pickle.load(open('static/Sav_Models/KNN_model.sav','rb'))
 load_model_RF=pickle.load(open('static/Sav_Models/RF_model.sav','rb'))
 load_model_XG=pickle.load(open('static/Sav_Models/GB_model.sav','rb'))
+import os
+from flask_mail import Mail
+from flask_mail import Message
+#mail config
+os.environ['API_USER']='4jn19cs091shreyasadiga@gmail.com'
+os.environ['API_PASSWORD']='ajxpssgojxnpozkz'
 
 app= Flask(__name__)
+#mail initiate
+app.config["MAIL_SERVER"] = 'smtp.gmail.com'
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = os.environ.get('API_USER')
+app.config["MAIL_PASSWORD"] = os.environ.get('API_PASSWORD')
+
+
+mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -23,6 +38,8 @@ def prediction_data():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+        name = request.form['name']
+        email = request.form['email']
         MDVP_Fo = float(request.form['MDVP_Fo'])
         MDVP_Fhi = float(request.form['MDVP_Fhi'])
         MDVP_Flo = float(request.form['MDVP_Flo'])
@@ -56,7 +73,8 @@ def predict():
 
         # standardize the data
         #std_data = scaler.transform(input_data_reshaped)
-
+        print(name)
+        print(email)
         prediction_DT = load_model_DT.predict(input_data_reshaped)
         print(prediction_DT)
         prediction_KNN = load_model_KNN.predict(input_data_reshaped)
@@ -107,7 +125,30 @@ def predict():
              psss="Positive"
         elif total<50 :
              psss="Negative"
+
+
+        subject = "Parkinson's Disease Prediction Report"
+        emails=[]
+        emails.append(email)
+        names=[]
+        names.append(name)
+        result=[]
+        result.append(psss)
+        msg= "<body>Dear %s, </body>  "%names[0]
+     #    m=msg+msgs
+        sendEmail(recipientsArr=emails,subject=subject,msgBody="<html><body><br>Your Parkinson's Disease Detection Test has returned a %s result. <br>Thank you, <br><br> With Regards, <br>PMDL Team  </body></html>" %result[0])
         return render_template('results.html',knn=result_knn,dt=result_dt,rf=result_rf,xg=result_xg,psss=psss)
+
+def sendEmail(recipientsArr,subject,msgBody):
+    try:
+        msg = Message(subject, sender='4jn19cs091shreyasadiga@gmail.com',recipients=recipientsArr)
+        msg.body = msgBody
+        msg.html = msgBody
+        mail.send(msg)
+        return 1
+    except:
+        return 0
+    
 #File Upload Codes for Voice and Spiral datas
 @app.route('/voice-file-upload')
 def voice_data():
@@ -123,3 +164,4 @@ def upload_file():
 
 if __name__ =='__main__':
     app.run(host='0.0.0.0', port=5000)
+    app.debug = True

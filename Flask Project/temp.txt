@@ -1,0 +1,28 @@
+password=ajxpssgojxnpozkz
+# #code for email bot
+# app.config['SECRET_KEY'] ="488d2b5de55d6af4fa322b72"
+# app.config['MAIL_SERVER'] ="smptp.googlemail.com"
+# app.config['MAIL_PORT'] = 587
+# app.config['MAIL_USERNAME'] = "4jn19cs091shreyasadiga@gmail.com"
+# app.config['MAIL_PASSWORD'] = "ajxpssgojxnpozkz"
+# mail = Mail(app)
+# @app.route("/send_email/<email>",methods=["GET"])
+# def send_email(email):
+#      msg_title = "This is a test email"
+#      sender = "noreply@pmdl.com"
+#      #msg.html = "<b>testing</b>"
+#      msg = Message(msg_title,sender=sender,recipients=[email])
+#      msg_body = "This is emial body"
+#      msg.body = ""
+#      data = {
+#           'app_name': "Shreyas",
+#           'title':msg_title,
+#           'body': msg_body,
+#      }
+#      msg.html = render_template("email.html",data=data)
+#      try:
+#           mail.send(msg)
+#           return "Email sent ..."
+#      except Exception as e:
+#           print(e)
+#           return "the email was not sent"

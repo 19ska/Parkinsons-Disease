@@ -223,7 +223,11 @@
                     <div class="col-md-6">
                         <p class="mb-4" style="font-size: 1.6rem;"><br><br><br>Your Parkinson's Disease Detection Test has returned a {{psss}} result</p>
                         <p class="font-weight-bold text-success mb-2">According to the analysis, you have been tested {{psss}} with Parkinson’s Disease.Please contact the doctor immediately to avoid any further complications in your health.</p>
-                        <div data-aos="fade-up" data-aos-delay="1700" class="my-2"><button class="btn btn-outline-info shadow" data-bss-hover-animate="pulse" onclick="">Send Report</button></div>
+                        <div data-aos="fade-up" data-aos-delay="1700" class="my-2">
+                            <a href="/data"><button class="btn btn-outline-info"><-Back</button></a>
+                            <button class="btn btn-outline-info shadow" data-bss-hover-animate="pulse" onclick="back();">Send Report</button>
+                            
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <lottie-player data-bss-hover-animate="pulse" src="https://assets10.lottiefiles.com/packages/lf20_0ssane8p.json" mode="normal" autoplay="" style="width: 400px;height: 400px;"></lottie-player>
@@ -364,6 +368,9 @@
         function viewreport(){
             document.getElementById("report").style.display="none";
             document.getElementById("reports").style.display="block";
+        }
+        function back(){
+            alert('hi');
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
