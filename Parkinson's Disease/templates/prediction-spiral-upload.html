@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>PMDL Voice</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMDL Spiral</title>
     <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
     <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css?h=a884aa3b60a93ebd290b9fa341049391">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="static/assets/css/Banner-Heading-Image-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
 </head>
-
 <body>
     <!-- Start: Navbar Centered Links -->
     <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
@@ -30,23 +29,22 @@
                 <a class="btn btn-info border rounded shadow" role="button" data-bss-hover-animate="pulse" href="/select">Get Started</a>
             </div>
         </div>
-      </nav>
-      <!-- End: Navbar Centered Links -->
-
+    </nav>
+    <!-- End: Navbar Centered Links -->
     <header class="bg-primary-gradient" id="header" style="display: block;">
         <!-- Start: Voice Feature Headings -->
         <div class="container py-4 py-xl-5">
             <div class="row py-5">
                 <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
                     <div style="max-width: 450px;">
-                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Voice Features Extraction</p>
-                        <p class="my-3">Upload a speech audio with your voice and know the test results using ML Algorithms</p>
+                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Spiral Drawing</p>
+                        <p class="my-3">Upload a spiral drawning  and know the test results using ML Algorithms</p>
                         <center><button class="btn btn-outline-info border rounded shadow" role="button" data-bss-hover-animate="pulse" type="button" onclick="question_one();">Next -></button></center>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
-                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_bXsnEx.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_33asonmr.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
                     </div>
                 </div>
             </div>
@@ -59,12 +57,12 @@
             <div class="row py-5">
                 <div class="col-md-6">
                     <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
-                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_owkzfxim.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_lKvkGl.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
                     <div style="max-width: 450px;">
-                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Do have voice recordings? </p>
+                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Do have spiral drawnings ? </p>
                         <p class="my-3">Select You Options</p>
                         <div class="row py-5">
                             <div class="col-md-6">
@@ -91,6 +89,28 @@
             </div>
         </div><!-- End: Voice Feature Q1 -->
     </header>
+    <header class="bg-primary-gradient" id="question_twos_no" style="display: none;">
+        <!-- Start: Voice Feature Q2 -->
+        <div class="container py-4 py-xl-5">
+            <div class="row py-5">
+                <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
+                    <div style="max-width: 450px;">
+                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">General Instructions</p>
+                        <p class="my-3">1. Please draw on the drawning pad.</p>
+                        <p class="my-3">2. Download the drawning in .png, .jpj, .jpeg formats only.</p>
+                        <p class="my-3">3. Click on next to upload the drawnings</p>
+                        <p class="my-3">4. Maximum file size is 5mb.</p>
+                        <center><button class="btn btn-outline-info border rounded shadow" role="button" data-bss-hover-animate="pulse" type="button" onclick="draw();">Next -></button></center>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
+                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_bcop55ma.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End: Voice Feature Q3 -->
+    </header>
 
     <header class="bg-primary-gradient" id="question_three" style="display: none;" onclick="question_three();">
         <!-- Start: Voice Feature Q2 -->
@@ -99,17 +119,17 @@
                 <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
                     <div style="max-width: 450px;">
                         <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">General Instructions</p>
-                        <p class="my-3">1. Make sure you audio file is minimum of 2.30 seconds.</p>
-                        <p class="my-3">2. Make sure you have recorded in the noise cancelation room.</p>
-                        <p class="my-3">3. Only mp3, mp4, wav file dormats are accepted.</p>
-                        <p class="my-3">4. Do not upload video files consting mp4 format.</p>
-                        <p class="my-3">5. Maximum file size is 15mb.</p>
+                        <p class="my-3">1. Make sure you draw the spiral in white sheet and black pen.</p>
+                        <p class="my-3">2. Make sure you take the picture properly.</p>
+                        <p class="my-3">3. Only jpj, jpeg, & png file formats are accepted.</p>
+                        <p class="my-3">4. Do not upload doc,jiff & other file format.</p>
+                        <p class="my-3">5. Maximum file size is 5mb.</p>
                         <center><button class="btn btn-outline-info border rounded shadow" role="button" data-bss-hover-animate="pulse" type="button" onclick="question_one();">Next -></button></center>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_MO5MPFgTv1.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_bcop55ma.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
                     </div>
                 </div>
             </div>
@@ -122,10 +142,10 @@
             <div class="row py-5">
                 <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
                     <div style="max-width: 450px;">
-                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Upload Audio File</p>
-                        <p class="my-3">Upload a speech audio with your voice and know the test results using ML Algorithms</p>
+                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Upload Spiral File</p>
+                        <p class="my-3">Upload a spiral drawnings and know the test results using ML Algorithms</p>
                         <form method="POST"action="/upload" enctype=multipart/form-data>
-                            <input class="form-control" type="file" id="audioFileInput" name="file" accept=".mp3, .mp4, .wav"> <br>
+                            <input class="form-control" type="file" id="audioFileInput" name="file" accept=".jpj, .jpeg, .png"> <br>
                             <center><button class="btn btn-outline-info border rounded shadow" role="button" data-bss-hover-animate="pulse" type="submit" style="display: none;" id="uploadsss">Upload</button></center>
                             <!-- <p class="my-3" style="color: red;" id="error" style="display: none;">Error: File size is large.Upto 15mb is allowed</p> -->
                         </form>
@@ -134,20 +154,12 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
-                        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_bXsnEx.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_xudbbfnj.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
                     </div>
                 </div>
             </div>
         </div><!-- End: Feature Headings -->
     </header>
-
-    <section class="py-5">
-        <!-- Start: Testimonials -->
-        <div class="container py-4 py-xl-5">
-            
-        </div>
-        <!-- End: Testimonials -->
-    </section>
     <!-- Start: Footer Multi Column -->
     <footer class="bg-primary-gradient">
         <div class="container py-4 py-lg-5">
@@ -157,25 +169,34 @@
             </div>
         </div>
     </footer>
-    <!-- End: Footer Multi Column -->
     <script>
         function question_one(){
             document.getElementById("header").style.display="none";
             document.getElementById("question_two").style.display="block";
             document.getElementById("question_three").style.display="none";
             document.getElementById("question_four").style.display="none";
+            document.getElementById("question_twos_no").style.display="none"
         }
         function question_two_yes(){
             document.getElementById("header").style.display="none";
             document.getElementById("question_two").style.display="none";
             document.getElementById("question_three").style.display="block";
             document.getElementById("question_four").style.display="none";
+            document.getElementById("question_twos_no").style.display="none"
+        }
+        function question_two_no(){
+            document.getElementById("header").style.display="none";
+            document.getElementById("question_two").style.display="none";
+            document.getElementById("question_three").style.display="none";
+            document.getElementById("question_four").style.display="none";
+            document.getElementById("question_twos_no").style.display="block"
         }
         function question_three(){
             document.getElementById("header").style.display="none";
             document.getElementById("question_two").style.display="none";
             document.getElementById("question_three").style.display="none";
             document.getElementById("question_four").style.display="block";
+            document.getElementById("question_twos_no").style.display="none"
         }
         function file_validate(){
             Swal.fire({
@@ -209,20 +230,20 @@
                 }
                 // Swal.fire('Saved!', '', 'success')
             } else if (result.isDenied) {
-                Swal.fire('File not uploaded', '', 'error')
+                Swal.fire('File not selected', '', 'error')
             }
             })           
             
         }
     </script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.min.js"></script>
-    <script src="static/assets/js/bs-init.js?h=204f7443d4f5b0aced5b29f8710544b2"></script>
-    <script src="static/assets/js/bold-and-bright.js?h=78569998362133b84a76614652f3624f"></script>
-    <!-- Sweet alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- End: Footer Multi Column -->
+      <script src="sweetalert2.all.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.min.js"></script>
+      <script src="static/assets/js/bs-init.js?h=204f7443d4f5b0aced5b29f8710544b2"></script>
+      <script src="static/assets/js/bold-and-bright.js?h=78569998362133b84a76614652f3624f"></script>
+      <!-- Sweet alert -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>

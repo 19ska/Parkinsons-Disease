@@ -126,7 +126,7 @@ def predict():
         elif total<50 :
              psss="Negative"
 
-
+     #mailers code
         subject = "Parkinson's Disease Prediction Report"
         emails=[]
         emails.append(email)
@@ -139,6 +139,7 @@ def predict():
         sendEmail(recipientsArr=emails,subject=subject,msgBody="<html><body><br>Your Parkinson's Disease Detection Test has returned a %s result. <br>Thank you, <br><br> With Regards, <br>PMDL Team  </body></html>" %result[0])
         return render_template('results.html',knn=result_knn,dt=result_dt,rf=result_rf,xg=result_xg,psss=psss)
 
+#send mail code function
 def sendEmail(recipientsArr,subject,msgBody):
     try:
         msg = Message(subject, sender='4jn19cs091shreyasadiga@gmail.com',recipients=recipientsArr)
@@ -148,7 +149,10 @@ def sendEmail(recipientsArr,subject,msgBody):
         return 1
     except:
         return 0
-    
+#spiral one codes
+@app.route('/spiral-file-upload')    
+def spiral_data():
+     return render_template('prediction-spiral-upload.html')
 #File Upload Codes for Voice and Spiral datas
 @app.route('/voice-file-upload')
 def voice_data():
@@ -163,5 +167,5 @@ def upload_file():
 
 
 if __name__ =='__main__':
-    app.run(host='0.0.0.0', port=5000)
-    app.debug = True
+    app.run(host='0.0.0.0', port=5000,debug = True)
+    
