@@ -1,0 +1,13 @@
+scikit-learn==1.2.1
+numpy==1.23.5
+pandas==1.5.1
+xgboost==1.7.5
+eyed3==0.9.7
+ffmpeg==1.4
+matplotlib==3.7.1
+pyTelegramBotAPI==4.10.0
+praat-parselmouth==0.4.3
+seaborn==0.12.2
+my-voice-analysis==0.7
+praat-textgrids==1.4.0
+Flask-Mail==0.9.1

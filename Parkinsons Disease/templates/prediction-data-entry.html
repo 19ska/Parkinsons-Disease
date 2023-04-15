@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PMDL Data Entry</title>
+    <link rel="icon" type="image/x-icon" href="static/images/logo.ico">
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css?h=a884aa3b60a93ebd290b9fa341049391">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="static/assets/css/Banner-Heading-Image-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
+</head>
+
+<body>
+    <!-- Start: Navbar Centered Links -->
+    <nav class="navbar navbar-light navbar-expand-md sticky-top navbar-shrink py-3" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" data-bss-hover-animate="pulse" href="/">
+            <img src="static/images/logo.ico" alt="" srcset="" width="25px" height="25px"> &nbsp;
+            <span><strong>PDML</strong>
+              </span>
+            </a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-3"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-3">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" data-bss-hover-animate="pulse" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="#servicesss">Services</a></li>
+                </ul>
+                <a class="btn btn-info border rounded shadow" role="button" data-bss-hover-animate="pulse" href="/select">Get Started</a>
+            </div>
+        </div>
+      </nav>
+      <!-- End: Navbar Centered Links -->
+    <header class="bg-primary-gradient" id="header" style="display: block;">
+        <!-- Start: Hero Clean Reverse -->
+        <div class="container py-4 py-xl-5">
+            <div class="row py-5">
+                <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
+                    <div style="max-width: 450px;">
+                        <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">High accurate ML algorithm</p>
+                        <p class="my-3">Know the results instantly using Supervised Machine Learning Algorithms with high accuracy.</p>
+                        <a ><button class="btn btn-outline-info border rounded shadow" onclick="start()">Next -></button></a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_KS2VTJka6L.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End: Hero Clean Reverse -->
+    </header>
+
+    <header class="bg-primary-gradient" id="question" style="display: none;">
+      <!-- Start: Voice Feature Q1 -->
+      <div class="container py-4 py-xl-5">
+          <div class="row py-5">
+              <div class="col-md-6">
+                  <div class="p-5 mx-lg-5" style="background: url(&quot;/assets/img/blob.svg?h=6d33157a34a70dbf84eebff502fc118a&quot;) center / contain no-repeat;">
+                      <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9xrenieu.json" mode="normal" loop="" autoplay="" speed="1.5"></lottie-player>
+                  </div>
+              </div>
+              <div class="col-md-6 text-center text-md-left d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-end mb-4">
+                  <div style="max-width: 450px;">
+                      <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Enter your name and email !</p>
+                      <p class="my-3">We will send the report to your mail</p>
+                      <div class="form-row">
+                        <div class="col">
+                          <label for="inputText">Name</label>
+                          <input type="text" class="form-control" placeholder="Enter your name" name="name" id="names" required>
+                        </div>
+                        <div class="col">
+                          <label for="inputText">Email</label>
+                          <input type="text" class="form-control" placeholder="Enter your email" name="email" id="emails" required>
+                        </div>
+                      </div>
+                      <div class="row py-5">
+                            <button type="button" class="btn btn-outline-danger border rounded shadow" role="button" data-bss-hover-animate="pulse" onclick="backs();"><-Back</button>
+                          &nbsp;
+                            <button class="btn btn-outline-info border rounded shadow" role="button" data-bss-hover-animate="pulse" type="button" onclick="continues();">Continue -></button>
+                          
+                      </div>
+                  </div>
+              </div>                
+          </div>
+      </div><!-- End: Voice Feature Q1 -->
+    </header>
+    <section class="py-5" id="headers" style="display: none;">
+        <!-- Start: Testimonials -->
+        <div class="container py-4 py-xl-5">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <p class="font-weight-bold text-success mb-2" style="font-size: 25px;">Enter the data</p>
+                    <!-- <h2 class="font-weight-bold"><strong>What People Say About us</strong></h2>
+                    <p class="text-muted">No matter the project, our team can handle it.&nbsp;</p> -->
+                </div>
+                <div class="card w-100">
+                    <div class="card-body">
+                        <form method="POST" action="/predict">
+                          <input type="text" class="form-control" placeholder="" name="name" value="" style="visibility: hidden;" id="name">
+                          <input type="text" class="form-control" placeholder="" name="email" value="" style="visibility: hidden;" id="email">
+                            <div class="form-row">
+                              <div class="col">
+                                <label for="inputText">MDVP:Fo</label>
+                                <input type="number" class="form-control" placeholder="MDVP:Fo" name="MDVP_Fo" required>
+                              </div>
+                              <div class="col">
+                                <label for="inputText">MDVP:Fhi</label>
+                                <input type="number" class="form-control" placeholder="MDVP:Fhi" name="MDVP_Fhi" required>
+                              </div><div class="col">
+                                <label for="inputText">MDVP:Flo</label>
+                                <input type="number" class="form-control" placeholder="MDVP:Flo" name="MDVP_Flo" required>
+                              </div>
+                              <div class="col">
+                                <label for="inputText">MDVP_jitter_percent</label>
+                                <input type="number" class="form-control" placeholder="mdvp_jitter_percent" name="mdvp_jitter_percent" required>
+                              </div>
+                            </div> <br>
+                            <div class="form-row">
+                              <div class="col">
+                                <label for="inputText">MDVP_jitter_abs</label>
+                                <input type="number" class="form-control" placeholder="mdvp_jitter_abs" name="mdvp_jitter_abs" required>
+                              </div>
+                              <div class="col">
+                                <label for="inputText">MDVP_rap</label>
+                                <input type="number" class="form-control" placeholder="mdvp_rap" name="mdvp_rap" required>
+                              </div>
+                                <div class="col">
+                                  <label for="inputText">MDVP_ppq</label>
+                                  <input type="number" class="form-control" placeholder="mdvp_ppq" name="mdvp_ppq" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Jitterr_ddp</label>
+                                  <input type="number" class="form-control" placeholder="jitter_ddp" name="jitter_ddp" required>
+                                </div>
+                              </div> <br>
+                              <div class="form-row">
+                                <div class="col">
+                                  <label for="inputText">MDVP_shimmer</label>
+                                  <input type="number" class="form-control" placeholder="mdvp_shimmer" name="mdvp_shimmer" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">MDVP_shimmer_db</label>
+                                  <input type="number" class="form-control" placeholder="mdvp_shimmer_db" name="mdvp_shimmer_db" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Shimmer_apq3</label>
+                                  <input type="number" class="form-control" placeholder="shimmer_apq3" name="shimmer_apq3" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Shimmer_apq5</label>
+                                  <input type="number" class="form-control" placeholder="shimmer_apq5" name="shimmer_apq5" required>
+                                </div>
+                              </div> <br>
+                              <div class="form-row">
+                                <div class="col">
+                                  <label for="inputText">MDVP_apq</label>
+                                  <input type="number" class="form-control" placeholder="mdvp_apq" name="mdvp_apq" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Shimmer_dda</label>
+                                  <input type="number" class="form-control" placeholder="shimmer_dda" name="shimmer_dda" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Nhr</label>
+                                  <input type="number" class="form-control" placeholder="nhr" name="nhr" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">hnr</label>
+                                  <input type="number" class="form-control" placeholder="hnr" name="hnr" required>
+                                </div>
+                              </div> <br>
+                              <div class="form-row">
+                                <div class="col">
+                                  <label for="inputText">Rped</label>
+                                  <input type="number" class="form-control" placeholder="rped" name="rped" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Dfa</label>
+                                  <input type="number" class="form-control" placeholder="dfa" name="dfa" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Spread 1</label>
+                                  <input type="number" class="form-control" placeholder="spread1" name="spread1" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Spread 2</label>
+                                  <input type="number" class="form-control" placeholder="spread2" name="spread2" required>
+                                </div>
+                              </div> <br>
+                              <div class="form-row">
+                                
+                                <div class="col">
+                                  <label for="inputText">Df</label>
+                                  <input type="number" class="form-control" placeholder="df" name="df" required>
+                                </div>
+                                <div class="col">
+                                  <label for="inputText">Ppe</label>
+                                  <input type="number" class="form-control" placeholder="ppe" name="ppe" required>
+                                </div>
+                              </div> <br>
+                              <button type="button" class="btn btn-outline-danger border rounded shadow mb-lg-3" onclick="continuess();"><-Back</button>
+                              <button type="submit" class="btn btn-outline-info border rounded shadow mb-lg-3">Submit</button>
+                          </form>
+                    </div>
+                  </div>
+            </div>
+        </div><!-- End: Testimonials -->
+    </section><!-- Start: Footer Multi Column -->
+    <footer class="bg-primary-gradient">
+        <div class="container py-4 py-lg-5">
+            <hr>
+            <div class="text-muted d-flex justify-content-between pt-3">
+                <p class="mb-0">Copyright © 2023 PMDL</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End: Footer Multi Column -->
+    <script>
+      function start(){
+        document.getElementById('header').style.display="none";
+        document.getElementById('question').style.display="block";
+        document.getElementById('headers').style.display="none";
+      }
+      function continues(){
+        var name = document.getElementById("names").value;
+        var email = document.getElementById("emails").value;
+        console.log(name);
+        document.getElementById('header').style.display="none";
+        document.getElementById('question').style.display="none";
+        document.getElementById('headers').style.display="block";
+        document.getElementById("name").value = name;
+        document.getElementById("email").value = email;
+        alert('name:'+name+'email:'+email);
+      }
+      function backs(){
+        document.getElementById('header').style.display="block";
+        document.getElementById('question').style.display="none";
+        document.getElementById('headers').style.display="none";
+      }
+      function continuess(){
+
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.min.js"></script>
+    <script src="static/assets/js/bs-init.js?h=204f7443d4f5b0aced5b29f8710544b2"></script>
+    <script src="static/assets/js/bold-and-bright.js?h=78569998362133b84a76614652f3624f"></script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
