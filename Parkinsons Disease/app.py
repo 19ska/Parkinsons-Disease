@@ -84,35 +84,81 @@ def predict():
         prediction_XG = load_model_XG.predict(input_data_reshaped)
         print(prediction_XG)
         if prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
-            return'KNN: no DT: no RF:no XG: no'
+            result_dt="-"
+            result_knn="-"
+            result_rf="-"
+            result_xg="-"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             return'KNN: no DT: no RF:yes XG: yes'
+             result_dt="-"
+             result_knn="-"
+             result_rf="-"
+             result_xg="+"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             return'KNN: no DT: no RF:yes XG: no'
+             result_dt="-"
+             result_knn="-"
+             result_rf="+"
+             result_xg="-"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             return'KNN: no DT: no RF:yes XG: yes'
+             result_dt="-"
+             result_knn="-"
+             result_rf="+"
+             result_xg="+"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             return'KNN: no DT: yes RF:no XG: no'
+             result_dt="-"
+             result_knn="+"
+             result_rf="-"
+             result_xg="-"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
+             result_dt="-"
+             result_knn="+"
+             result_rf="-"
+             result_xg="+"
              return'KNN: no DT: yes RF:no XG: yes'
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             return'KNN: no DT: yes RF:yes XG: no'
+             result_dt="-"
+             result_knn="+"
+             result_rf="+"
+             result_xg="-"
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             return'KNN: no DT: yes RF:yes XG: yes'
+             result_dt="-"
+             result_knn="+"
+             result_rf="+"
+             result_xg="+"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             return'KNN: yes DT: no RF:no XG: no'
+             result_dt="+"
+             result_knn="-"
+             result_rf="-"
+             result_xg="-"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             return'KNN: yes DT: no RF:no XG: yes'
+             result_dt="+"
+             result_knn="-"
+             result_rf="-"
+             result_xg="+"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             return'KNN: yes DT: no RF:yes XG: no'
+             result_dt="+"
+             result_knn="-"
+             result_rf="+"
+             result_xg="-"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             return'KNN: yes DT: no RF:yes XG: yes'
+             result_dt="+"
+             result_knn="-"
+             result_rf="+"
+             result_xg="+"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             return'KNN: yes DT: yes RF:no XG: no'
+             result_dt="+"
+             result_knn="+"
+             result_rf="-"
+             result_xg="-"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             return'KNN: yes DT: yes RF:no XG: yes'
+             result_dt="+"
+             result_knn="+"
+             result_rf="-"
+             result_xg="+"
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             return'KNN: yes DT: yes RF:yes XG: no'
+             result_dt="+"
+             result_knn="+"
+             result_rf="+"
+             result_xg="-"        
         elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
              result_dt="+"
              result_knn="+"
