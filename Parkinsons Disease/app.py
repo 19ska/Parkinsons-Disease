@@ -113,7 +113,6 @@ def predict():
              result_knn="+"
              result_rf="-"
              result_xg="+"
-             return'KNN: no DT: yes RF:no XG: yes'
         elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
              result_dt="-"
              result_knn="+"
@@ -164,7 +163,6 @@ def predict():
              result_knn="+"
              result_rf="+"
              result_xg="+"
-             #return'KNN: yes DT: yes RF:yes XG: yes'
           
         total = ((prediction_DT+prediction_KNN+prediction_RF+prediction_XG)/4)*100
         if total >50 :
