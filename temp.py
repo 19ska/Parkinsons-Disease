@@ -30,3 +30,4 @@ if (prediction[0] == 0):
 
 else:
   print("The Person has Parkinsons")
+  print("hello")
