@@ -12,8 +12,8 @@ import os
 from flask_mail import Mail
 from flask_mail import Message
 #mail config
-os.environ['API_USER']='4jn19cs091shreyasadiga@gmail.com'
-os.environ['API_PASSWORD']='ajxpssgojxnpozkz'
+os.environ['API_USER']=''
+os.environ['API_PASSWORD']=''
 
 app= Flask(__name__)
 #mail initiate
