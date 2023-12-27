@@ -11,3 +11,5 @@ seaborn==0.12.2
 my-voice-analysis==0.7
 praat-textgrids==1.4.0
 Flask-Mail==0.9.1
+keras==2.12.0
+tensorflow==2.12.0

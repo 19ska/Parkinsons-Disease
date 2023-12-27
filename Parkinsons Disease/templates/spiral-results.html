@@ -150,70 +150,14 @@
                                   <div class="circle-1"></div>
                                 </div>                          
                                 <p class="center">
-                                    <span style="color:white;">KNN <br>84.61%
+                                    <span style="color:white;">CNN <br>97%
                                     </span></p>
                               </div>
                             </div>
                         </div>
                         
                 </div>
-                <div class="col-md-3">
-                    
-                    <div class="container" data-bss-hover-animate="pulse">
-                        <div class="donut-chart-block block">
-                          <div class="donut-chart-1">
-                            <div id="part1" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>
-                            <div id="part2" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>                          
-                            <p class="center">
-                                <span style="color:white;">DT <br>92.3%
-                                </span></p>
-                          </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col" data-bss-hover-animate="pulse">
-                    
-                    <div class="container" data-bss-hover-animate="pulse">
-                        <div class="donut-chart-block block">
-                          <div class="donut-chart-1">
-                            <div id="part1" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>
-                            <div id="part2" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>                          
-                            <p class="center">
-                                <span style="color:white;">RF <br>94.87%
-                                </span></p>
-                          </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-3">
-                    
-                    <div class="container" data-bss-hover-animate="pulse">
-                        <div class="donut-chart-block block">
-                          <div class="donut-chart-1">
-                            <div id="part1" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>
-                            <div id="part2" class="portion-block-1">
-                              <div class="circle-1"></div>
-                            </div>                          
-                            <p class="center">
-                                <span style="color:white;">XG <br>94.87%
-                                </span></p>
-                          </div>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
         </div><!-- End: 1 Row 4 Columns -->
         <div class="col-md-12">
@@ -221,11 +165,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p class="mb-4" style="font-size: 1.6rem;"><br><br><br>{{resultsofprediction}} </p>
-                        <p class="font-weight-bold text-success mb-2">We have sent the report to your mail.</p>
+                        <p class="mb-4" style="font-size: 1.6rem;"><br><br><br>{{result}}</p>
+                        <input  id="result" style="display: none;" value="{{result}}">
+                        <p class="font-weight-bold text-success mb-2" style="display: block;" id="postive">We have sent the report to your mail id.</p>
                         <div data-aos="fade-up" data-aos-delay="1700" class="my-2">
-                            <a href="/data"><button class="btn btn-outline-info"><-Back</button></a>
-                            
+                            <a href="/spiral-file-upload"><button class="btn btn-outline-info"><-Back</button></a>                            
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -249,6 +193,15 @@
         function viewreport(){
             document.getElementById("report").style.display="none";
             document.getElementById("reports").style.display="block";
+            // var results = document.getElementById("result").value;
+            // if (results == 'negative' ){
+            //     document.getElementById("negative").style.display="block";
+            //     document.getElementById("postive").style.display="none";
+            // }
+            // else{
+            //     document.getElementById("postive").style.display="block";
+            //     document.getElementById("negative").style.display="none";
+            // }
         }
         function back(){
             alert('hi');

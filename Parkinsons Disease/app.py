@@ -5,9 +5,17 @@ from flask import jsonify
 import pickle
 import numpy as np
 load_model_DT=pickle.load(open('static/Sav_Models/DT_model.sav','rb'))
-load_model_KNN=pickle.load(open('static/Sav_Models/KNN_model.sav','rb'))
+load_model_KNN=pickle.load(open('static/Sav_Models/knn.sav','rb'))
 load_model_RF=pickle.load(open('static/Sav_Models/RF_model.sav','rb'))
 load_model_XG=pickle.load(open('static/Sav_Models/GB_model.sav','rb'))
+
+#import and models for spiral
+import matplotlib.pyplot as plt
+from keras.utils import load_img, img_to_array
+from keras.preprocessing import image
+from keras.models import load_model
+model = load_model('spiral_modelfinal.h5') # load the trained model from a file
+#end of import models and spiral
 import os
 from flask_mail import Mail
 from flask_mail import Message
@@ -16,6 +24,7 @@ os.environ['API_USER']=''
 os.environ['API_PASSWORD']=''
 
 app= Flask(__name__)
+
 #mail initiate
 app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 app.config["MAIL_PORT"] = 465
@@ -82,94 +91,20 @@ def predict():
         prediction_RF = load_model_RF.predict(input_data_reshaped)
         print(prediction_RF)
         prediction_XG = load_model_XG.predict(input_data_reshaped)
-        print(prediction_XG)
-        if prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
-            result_dt="-"
-            result_knn="-"
-            result_rf="-"
-            result_xg="-"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             result_dt="-"
-             result_knn="-"
-             result_rf="-"
-             result_xg="+"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             result_dt="-"
-             result_knn="-"
-             result_rf="+"
-             result_xg="-"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             result_dt="-"
-             result_knn="-"
-             result_rf="+"
-             result_xg="+"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             result_dt="-"
-             result_knn="+"
-             result_rf="-"
-             result_xg="-"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             result_dt="-"
-             result_knn="+"
-             result_rf="-"
-             result_xg="+"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             result_dt="-"
-             result_knn="+"
-             result_rf="+"
-             result_xg="-"
-        elif prediction_DT[0] == 0 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             result_dt="-"
-             result_knn="+"
-             result_rf="+"
-             result_xg="+"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             result_dt="+"
-             result_knn="-"
-             result_rf="-"
-             result_xg="-"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             result_dt="+"
-             result_knn="-"
-             result_rf="-"
-             result_xg="+"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             result_dt="+"
-             result_knn="-"
-             result_rf="+"
-             result_xg="-"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==0 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             result_dt="+"
-             result_knn="-"
-             result_rf="+"
-             result_xg="+"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==0:
-             result_dt="+"
-             result_knn="+"
-             result_rf="-"
-             result_xg="-"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==0 and prediction_XG[0]==1:
-             result_dt="+"
-             result_knn="+"
-             result_rf="-"
-             result_xg="+"
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==0:
-             result_dt="+"
-             result_knn="+"
-             result_rf="+"
-             result_xg="-"        
-        elif prediction_DT[0] == 1 and prediction_KNN[0]==1 and prediction_RF[0]==1 and prediction_XG[0]==1:
-             result_dt="+"
-             result_knn="+"
-             result_rf="+"
-             result_xg="+"
-          
+        print(prediction_XG)          
         total = ((prediction_DT+prediction_KNN+prediction_RF+prediction_XG)/4)*100
-        if total >50 :
-             psss="Positive"
-        elif total<50 :
-             psss="Negative"
-
+        if total>=0 and total<=25:
+             ps="According to the prediction results you don’t have parkinson disease"
+             msg="According to the prediction results you don’t have parkinson disease"
+             print("According to the prediction results you don’t have parkinson disease")
+        elif total>25 and total<75:
+             ps="According to the prediction results you are likely to have Parkinson’s disease.\nContact your doctor as soon as possible"
+             msg="According to the prediction results you are likely to have Parkinson’s disease.\nContact your doctor as soon as possible"
+             print("According to the prediction results you are likely to have Parkinson’s disease.\nContact your doctor as soon as possible")
+        elif total>=75 and total<=100:
+             ps="According to the prediction results you have parkinson disease.\nContact your doctor immediately."
+             msg="According to the prediction results you have parkinson disease.\nContact your doctor immediately."
+             print("According to the prediction results you have parkinson disease.\nContact your doctor immediately.")
      #mailers code
         subject = "Parkinson's Disease Prediction Report"
         emails=[]
@@ -177,11 +112,9 @@ def predict():
         names=[]
         names.append(name)
         result=[]
-        result.append(psss)
-        msg= "<body>Dear %s, </body>  "%names[0]
-     #    m=msg+msgs
-        sendEmail(recipientsArr=emails,subject=subject,msgBody="<html><body><br>Your Parkinson's Disease Detection Test has returned a %s result. <br>Thank you, <br><br> With Regards, <br>PMDL Team  </body></html>" %result[0])
-        return render_template('results.html',knn=result_knn,dt=result_dt,rf=result_rf,xg=result_xg,psss=psss)
+        result.append(msg)
+        sendEmail(recipientsArr=emails,subject=subject,msgBody="<html><body><br>Dear %s,  %s<br>Thank you, <br><br> With Regards, <br>PMDL Team  </body></html>" %(names[0],result[0]))
+        return render_template('results.html',resultsofprediction=ps)
 
 #send mail code function
 def sendEmail(recipientsArr,subject,msgBody):
@@ -197,19 +130,67 @@ def sendEmail(recipientsArr,subject,msgBody):
 @app.route('/spiral-file-upload')    
 def spiral_data():
      return render_template('prediction-spiral-upload.html')
-#File Upload Codes for Voice and Spiral datas
+# #file upload for spirals
+@app.route('/image-uploads',methods=['GET','POST'])
+def image_upload_file():
+     file = request.files['file']
+     filename = file.filename
+     file.save('static/uploads-data/spiral-images/' + filename)
+     img_path = 'static/uploads-data/spiral-images/'+filename
+     name = request.form['name']
+     email = request.form['email']
+     # print(img_path)
+     img = load_img(img_path, target_size=(128, 128))
+     img_array = img_to_array(img)
+     img_array = np.expand_dims(img_array, axis=0)
+     img_array /= 255.
+
+     # make a prediction using the model
+     prediction = model.predict(img_array)
+
+     if prediction < 0.5:
+          result = "According to the prediction results you don’t have parkinson disease."
+          s="According to the prediction results you don’t have parkinson disease."
+          print("According to the prediction results you don’t have parkinson disease.")
+     else:
+          result = "According to the prediction results you have parkinson disease.\nContact your doctor as soon as possible"
+          s="According to the prediction results you have parkinson disease.\nContact your doctor as soon as possible"
+          print("According to the prediction results you have parkinson disease.\nContact your doctor as soon as possible")
+
+     #mailers code
+     subject = "Parkinson's Disease Prediction Report"
+     emails=[]
+     emails.append(email)
+     names=[]
+     names.append(name)
+     results=[]
+     results.append(s)
+     sendEmail(recipientsArr=emails,subject=subject,msgBody="<html><body><br>Dear %s,  %s <br>Thank you, <br><br> With Regards, <br>PMDL Team  </body></html>" %(name[0],results[0]))
+     return render_template('spiral-results.html',result=result)
+
+
+#File Upload Codes for Voice 
 @app.route('/voice-file-upload')
 def voice_data():
     return render_template('voice-file-upload.html')
 
-@app.route('/upload',methods=['GET','POST'])
+@app.route('/voice-uploads',methods=['GET','POST'])
 def upload_file():
      file = request.files['file']
      filename = file.filename
-     file.save('static/images/voice-data/' + filename)
+     file.save('static/uploads-data/voice/' + filename)
      return 'File uploaded successfully!'
 
+#404 error code
+@app.errorhandler(404)
+def not_found_error(error):
+    return '404.html'
 
 if __name__ =='__main__':
+<<<<<<< HEAD
+    app.run(host='0.0.0.0', port=3000,debug = True)
+    
+=======
     app.run(host='0.0.0.0', port=5000,debug = True)
     
+>>>>>>> 60d760609708a9db7103649acd9f53b5bdb9e0be
